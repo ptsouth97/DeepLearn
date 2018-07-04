@@ -3,6 +3,8 @@
 from keras.layers import Dense
 from keras.models import Sequential
 from tensorflow.examples.tutorials.mnist import input_data
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def main():
@@ -14,7 +16,9 @@ def main():
 
 	img, lab = load_mnist()
 
-	model(img, lab)
+	show_image(img)
+
+	# model(img, lab)
 
 
 def load_mnist():
@@ -27,8 +31,22 @@ def load_mnist():
 	
 	labels = mnist.train.labels
 	labels = labels[0:2500]
+
+	print(labels[2])
 	
 	return images, labels
+
+
+def show_image(images):
+	''' displays MNIST image'''
+
+	first_image = images[2]
+	first_image = np.array(first_image, dtype='float')
+	pixels = first_image.reshape((28, 28))
+	plt.imshow(pixels, cmap='gray')
+	plt.show()
+
+	return
 
 
 def model(X, y):
@@ -51,6 +69,8 @@ def model(X, y):
 
 	# Fit the model
 	model.fit(X, y, validation_split=0.3)
+
+	return
 
 
 if __name__ == '__main__':
