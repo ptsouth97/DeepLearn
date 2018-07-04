@@ -3,7 +3,6 @@
 from keras.layers import Dense
 from keras.models import Sequential
 from tensorflow.examples.tutorials.mnist import input_data
-# import sys
 
 
 def main():
@@ -13,6 +12,14 @@ def main():
 	# 28 x 28 grid flattened to 784 values for each image (flattened to 784 by 1 array)
 	# only use 2,500 images rather than 60,000
 
+	img, lab = load_mnist()
+
+	model(img, lab)
+
+
+def load_mnist():
+	''' loads mnist data'''
+
 	mnist = input_data.read_data_sets("MNIST_data", one_hot=True)
 
 	images = mnist.train.images
@@ -20,9 +27,8 @@ def main():
 	
 	labels = mnist.train.labels
 	labels = labels[0:2500]
-	print(labels[1])
-
-	# model(images, labels)
+	
+	return images, labels
 
 
 def model(X, y):
