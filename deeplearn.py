@@ -5,6 +5,7 @@ from keras.models import Sequential
 from tensorflow.examples.tutorials.mnist import input_data
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
 
 def main():
@@ -43,8 +44,13 @@ def show_image(images):
 	first_image = images[2]
 	first_image = np.array(first_image, dtype='float')
 	pixels = first_image.reshape((28, 28))
+
+	fig = plt.figure()
 	plt.imshow(pixels, cmap='gray')
-	plt.show()
+	plt.show(block=False)
+
+	time.sleep(3)
+	plt.close(fig)
 
 	return
 
