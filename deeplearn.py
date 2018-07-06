@@ -40,17 +40,19 @@ def load_mnist():
 
 def show_image(images):
 	''' displays MNIST image'''
+	
+	for i in range(0, 3):
 
-	first_image = images[2]
-	first_image = np.array(first_image, dtype='float')
-	pixels = first_image.reshape((28, 28))
+		this_image = images[i]
+		this_image = np.array(this_image, dtype='float')
+		pixels = this_image.reshape((28, 28))
 
-	fig = plt.figure()
-	plt.imshow(pixels, cmap='gray')
-	plt.show(block=False)
+		fig = plt.figure()
+		plt.imshow(pixels, cmap='gray')
+		plt.show(block=False)
 
-	time.sleep(3)
-	plt.close(fig)
+		time.sleep(2)
+		plt.close(fig)
 
 	return
 
