@@ -5,15 +5,27 @@ import numpy as np
 
 
 def main():
-	'''load file votes.csv'''
-	
-	data_file = 'votes.csv'
+	'''main function for testing'''
+
+	dt_file = 'votes.csv'
+	votes(dt_file)
+
+
+def votes(data_file):
+	'''loads votes.csv data file'''
+
 	df = pd.read_csv(data_file)
+
+	# Change the 'yes' and 'no' votes to 1 or 0
 	df.replace(('y', 'n'), (1, 0), inplace=True)
+
+	# Change the '?' to nan then drop them
 	df[df == '?'] = np.nan
 	df = df.dropna()
 
-	print(df)
+	# Show the dataframe if testing
+	if __name__ == '__main__':
+		print(df)
 
 	return df
 
