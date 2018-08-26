@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 
 
 def linreg(y, X_fertility):
-	'''performs and plots linear regression'''
+	'''performs and plots linear regression for countries life expectancy vs fertility for GapMinder Data year 2008'''
 
 	# Create the regressor: reg
 	reg = LinearRegression()
@@ -34,6 +34,7 @@ def linreg(y, X_fertility):
 def main():
 	''' main function'''
 
+	# y is life expectancy from the GapMinder Data Set year 2008
 	y = np.array([[ 75.3],
        [ 58.3],
        [ 75.5],
@@ -174,6 +175,7 @@ def main():
        [ 52. ],
        [ 49. ]])
 
+	# X_fertility is the fertility rate from the GapMinder Data Set year 2008
 	X_fertility = np.array([[ 2.73],
        [ 6.43],
        [ 2.24],
