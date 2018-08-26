@@ -26,6 +26,8 @@ def linreg(y, X_fertility):
 	# Plot regression line
 	plt.scatter(X_fertility, y)
 	plt.plot(prediction_space, y_pred, color='black', linewidth=3)
+	plt.xlabel('fertility')
+	plt.ylabel('Life expectancy')
 	plt.show()
 
 
