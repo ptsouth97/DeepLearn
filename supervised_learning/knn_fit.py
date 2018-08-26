@@ -1,4 +1,4 @@
-#!/usr/bin/python3.5
+#!/usr/bin/python3
 
 from sklearn.neighbors import KNeighborsClassifier
 import load_data

@@ -7,8 +7,8 @@ import numpy as np
 def main():
 	'''main function for testing'''
 
-	dt_file = 'votes.csv'
-	votes(dt_file)
+	dt_file = 'fertility.csv'
+	fertility(dt_file)
 
 
 def votes(data_file):
@@ -26,6 +26,17 @@ def votes(data_file):
 	# Show the dataframe if testing
 	if __name__ == '__main__':
 		print(df)
+
+	return df
+
+
+def fertility(data_file):
+	''' loads fertility csv file'''
+
+	df = pd.read_csv(data_file)
+	df = df.dropna()
+	print(df)
+	
 
 	return df
 
