@@ -9,7 +9,27 @@ from sklearn.neighbors import KNeighborsClassifier
 
 
 def main():
-	'''Evaluates the performance of a binary classifier by computing a confusion matrix and generating a classification report'''
+	'''Evaluates the performance of a binary classifier by computing a confusion matrix and generating a classification report
+	   Accounts for imbalances in data (e.g., 99% email-spam example)
+
+       Confusion matrix:
+                             Predicted          Predicted
+                             Spam Email         Real Email
+
+         Actual: Spam Email  True Positive      False Negative
+
+         Actual: Real Email  False Positive     True Negative
+
+	METRICS:
+	Accuracy = (tp + tn) / (tp + tn + fp + fn)   
+
+	Precision = tp / (tp + fp) (high=not many real emails predicted as spam)
+
+	Recall = tp / (tp + fn) aka sensitivity, hit rate, or true positive rate (high=predicted most spam emails corrctly)
+
+	F1 score = 2 * (precision * recall) / (precision + recall)
+    '''
+	
 
 	file_name = 'diabetes.csv'
 	df = pd.read_csv(file_name)

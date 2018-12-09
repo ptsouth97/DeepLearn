@@ -9,8 +9,16 @@ from sklearn.linear_model import LogisticRegression
  
  
 def main():
-	'''Evaluates the performance of a binary classifier by computing a confusion matrix and generating a classification report'''
- 
+	'''Binary classification: when we have two possible labels for the target variable
+       Given 1 feature, logreg will output a probability p with respect to the target variable
+       If p>0.5 label data as 1, p<0.5 label data as 0
+       Creates linear decision boundary
+	   0.5 is the threshold, but it can be changed
+       As threshold varies, how does model perform?
+       Receiver Operating Characteristic (ROC) curve is True Positive Rate vs False Positive rate
+       Varying the threshold creates a series of points
+       The set of all points is the ROC curve''' 
+
 	file_name = 'diabetes.csv'
 	df = pd.read_csv(file_name)
  
