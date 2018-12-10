@@ -1,0 +1,8 @@
+Preprocessing data
+
+- encode categorical features
+	- convert to 'dummy variables'
+	- scikit learn = onehotencoder or pandas = getdummies
+
+
+
