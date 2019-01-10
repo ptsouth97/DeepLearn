@@ -10,7 +10,7 @@ from sklearn.svm import SVC
 
 
 # Read 'gapminder.csv' into a DataFrame: df
-df = pd.read_csv('winequality-red.csv', sep=';')
+df = pd.read_csv('winequality-white.csv', sep=';')
 
 # Create feature array
 X = df.drop('quality', axis=1).values
@@ -19,8 +19,9 @@ X = df.drop('quality', axis=1).values
 y = df['quality'].values
 
 # Convert quality column based on >< 5
-y[y < 5] = 1
-y[y >= 5] = 0
+y[y <= 5] = 1
+y[y > 5] = 0
+y = y.astype(dtype=bool)
 
 # Scale the features: X_scaled
 X_scaled = scale(X)
