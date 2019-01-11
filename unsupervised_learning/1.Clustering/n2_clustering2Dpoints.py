@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 from sklearn.cluster import KMeans
-import clusters
+import n1_clusters
 
 
 def main():
@@ -15,7 +15,7 @@ def get_labels():
 	''' Create a KMeans model to find 3 clusters, and fit it to the data.  Returns labels and model'''
 
 	# Create array of data
-	points, new_points = clusters.make_points()
+	points, new_points = n1_clusters.make_points()
 
 	# Create a KMeans instance with 3 clusters: model
 	model = KMeans(n_clusters=3)

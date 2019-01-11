@@ -2,21 +2,21 @@
 
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
-import clusters, clustering2Dpoints
+import n1_clusters, n2_clustering2Dpoints
 
 
 def main():
 	''' create a KMeans model to find 3 clusters, and fit it to the data '''
 
 	# Create array of data
-	points, new_points = clusters.make_points()
+	points, new_points = n1_clusters.make_points()
 
 	# Assign the columns of new_points: xs and ys
 	xs = new_points[:,0]
 	ys = new_points[:,1]
 
 	# Get the labels and the model
-	labels, model = clustering2Dpoints.get_labels()
+	labels, model = n2_clustering2Dpoints.get_labels()
 
 	# Make a scatter plot of xs and ys, using labels to define the colors
 	plt.scatter(xs, ys, c=labels, alpha=0.5)
