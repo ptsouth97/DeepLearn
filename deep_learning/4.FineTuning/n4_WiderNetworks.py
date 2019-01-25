@@ -9,30 +9,11 @@ import matplotlib.pyplot as plt
 
 
 def main():
-	''' Main function for testing purposes -- makes model_1'''
+	''' Main function for testing purposes'''
 
 	# Get the data
 	predictors, target = get_data()
-	'''
-	# Define the input shape
-	input_shape = (10,)
 
-	# Create the new model: model_2
-	model_1 = Sequential()
-
-	# Add the first and second layers
-	model_1.add(Dense(10, activation='relu', input_shape=input_shape))
-	model_1.add(Dense(10, activation='relu', input_shape=input_shape))
-
-	# Add the output layer
-	model_1.add(Dense(2, activation='softmax'))
-
-	# Display the model summary
-	print(model_1.summary())
-
-	# Compile model_1
-	#model_1.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-	'''
 	# Compare with a bigger network
 	wider_network(predictors, target)
 
