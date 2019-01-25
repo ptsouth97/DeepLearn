@@ -7,12 +7,18 @@ import numpy as np
 
 
 def main():
-	'''  choose a good number of clusters for a dataset using the k-means inertia graph '''
+	'''  Main function for testing '''
 
 	samples = pd.read_csv('seeds_dataset.csv', header=None)
 	samples = samples.drop(samples.columns[7], axis=1)
 	samples = np.array(samples)
 	print(samples.shape)
+	num_of_clusters(samples)
+
+
+def num_of_clusters(data):
+	''' Plots inertia vs number of clusters to aid in finding a good number of clusters for a dataset'''
+
 	ks = range(1, 6)
 	inertias = []
 
@@ -21,7 +27,7 @@ def main():
 		model = KMeans(n_clusters=k)
     
     	# Fit model to samples
-		model.fit(samples)
+		model.fit(data)
     
 		# Append the inertia to the list of inertias
 		inertias.append(model.inertia_)
